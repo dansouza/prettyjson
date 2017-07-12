@@ -14,7 +14,7 @@ import (
 
 func main() {
 	var content map[string]interface{}
-	var file io.Reader
+	var file io.ReadCloser
 	var err error
 
 	if len(os.Args) == 2 {
@@ -24,6 +24,7 @@ func main() {
 				fmt.Printf("error: %s: %s", os.Args[1], err)
 				os.Exit(-1)
 			}
+			defer file.Close()
 		}
 	} else {
 		file = os.Stdin
