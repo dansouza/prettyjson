@@ -1,12 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-
 	"io"
 	"os"
-
-	"encoding/json"
 
 	"github.com/hokaccha/go-prettyjson"
 	"github.com/mattn/go-colorable"
